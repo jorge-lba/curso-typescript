@@ -7,7 +7,7 @@ class Car {
         private maxSpeed:number = 200
     ){}
 
-    private changeSpeed(delta:number):number {
+    protected changeSpeed(delta:number):number {
         const newSpeed:number = this.currentSpeed + delta
         const validSpeed:boolean = newSpeed >= 0 && newSpeed <= this.maxSpeed
         
@@ -28,6 +28,17 @@ class Car {
     public getCurrentSpeed:Function = ():number => this.currentSpeed
     public getMaxSpeed:Function = ():number => this.maxSpeed
 }
+
+class Ferrari extends Car {
+    constructor(model:string, maxSpeed:number){
+        super('Ferrari', model, maxSpeed)
+    }
+
+    public accelerate:Function = ():number => this.changeSpeed(20)
+    public brake:Function = ():number => this.changeSpeed(-15)
+}
+
+const F40:Ferrari = new Ferrari('F40', 320) 
 
 const carKa = new Car('Ford', 'Ka', 180)
 
@@ -50,4 +61,4 @@ function time (car:Car):void{
         console.log(currentSpeed)
     }, 150)
 } 
-time(carKa)
+time(F40)
