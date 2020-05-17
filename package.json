@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "git@github.com:jorge-lba/curso-typescript.git",
   "author": "jorge-lba <jorgeluiz.b.alegretti@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@types/node-fetch": "^2.5.7",
+    "node-fetch": "^2.6.0"
+  }
 }
