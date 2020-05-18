@@ -57,3 +57,8 @@ node-fetch@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
   integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
+
+systemjs@0.21.5:
+  version "0.21.5"
+  resolved "https://registry.yarnpkg.com/systemjs/-/systemjs-0.21.5.tgz#2fcef4edfe744003da4787f3f3d45d73f94462d2"
+  integrity sha512-GWzZhN/x7Fsae2CYkz2GF7OgOS+YDgKulcgd5L1kTogZHMKDrPx5T8zI8I0y5RoU9Dx78Z7j1XMfuFa1thD84A==
