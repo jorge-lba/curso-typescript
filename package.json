@@ -7,7 +7,11 @@
   "license": "MIT",
   "dependencies": {
     "@types/node-fetch": "^2.5.7",
+    "moment": "^2.26.0",
     "node-fetch": "^2.6.0",
     "systemjs": "0.21.5"
+  },
+  "devDependencies": {
+    "@types/moment": "^2.13.0"
   }
 }
