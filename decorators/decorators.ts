@@ -1,17 +1,33 @@
-// @loginClass
-@loginClassIf(false)
+type Constructor = { new(...args: any[]) : {} }
+
+function loginClass(constructor: Constructor){
+  console.log(constructor)
+}
+
+function decoratorEmpty(_: Constructor){}
+
+function loginClassIf(value: boolean){
+  return value ? loginClass : decoratorEmpty
+}
+
+// @loginClassIf(false)
+
+@loginObject
 class HouseholdAppliance {
   constructor(){
     console.log('New...')
   }
 }
 
-function loginClass(constructor: Function){
-  console.log(constructor)
+function loginObject(constructor: Constructor) {
+  console.log('Loaded...')
+  return class extends constructor {
+    constructor(...args: any[]){
+      console.log('Before...')
+      super(...args)
+      console.log('After...')
+    }
+  }
 }
 
-function decoratorEmpty(_: Function){}
-
-function loginClassIf(value: boolean){
-  return value ? loginClass : decoratorEmpty
-}
+new HouseholdAppliance()
