@@ -10,15 +10,6 @@ function loginClassIf(value: boolean){
   return value ? loginClass : decoratorEmpty
 }
 
-// @loginClassIf(false)
-
-@loginObject
-class HouseholdAppliance {
-  constructor(){
-    console.log('New...')
-  }
-}
-
 function loginObject(constructor: Constructor) {
   console.log('Loaded...')
   return class extends constructor {
@@ -30,4 +21,22 @@ function loginObject(constructor: Constructor) {
   }
 }
 
-new HouseholdAppliance()
+interface HouseholdAppliance {
+  print?(): void
+}
+
+@printable
+class HouseholdAppliance {
+  constructor(){
+    console.log('New...')
+  }
+}
+
+function printable(constructor: Function){
+  constructor.prototype.print = function (){
+    console.log(this)
+  }
+}
+
+const printer = new HouseholdAppliance
+printer.print && printer.print()
